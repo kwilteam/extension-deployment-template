@@ -1,0 +1,20 @@
+version: '3'
+services:
+  extension-1:
+    image: <your_image_here>
+    ports:
+      - 50055:50051
+    restart: on-failure
+
+  kwil:
+    image: kwildb/kwil:latest
+    ports:
+      - 50051:50051
+      - 8080:8080
+    env_file:
+      - ./config/kwil.env
+    environment:
+      - KWILD_EXTENSION_ENDPOINTS=extension-1:50051
+    depends_on:
+      - extension-1
+    restart: on-failure
