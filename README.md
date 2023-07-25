@@ -11,3 +11,11 @@ This repo serves as a template for running your own extensions using Docker Comp
     ``````
 
 An example of this template in action can be found [here](<https://github.com/kwilteam/extension-example-math.git>).
+
+## Makefile
+
+This repo contains a makefile that with common commands that may be run in this repo.  To see all commands, run:
+
+```bash
+make help
+```
