@@ -1,7 +1,7 @@
 version: '3'
 services:
   extension-1:
-    image: <your_image_here>
+    image: kwildb/extension-math:multi-arch
     ports:
       - 50055:50051
     restart: on-failure
@@ -17,4 +17,16 @@ services:
       - KWILD_EXTENSION_ENDPOINTS=extension-1:50051
     depends_on:
       - extension-1
+    restart: on-failure
+
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./certs:/etc/nginx/certs
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - kwil
     restart: on-failure
