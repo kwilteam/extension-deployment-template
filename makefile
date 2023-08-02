@@ -12,20 +12,10 @@ download-images: ## downloads the kwil image
 run: ## runs the kwil container with the math extension
 	@docker compose up -d kwil extension-1
 
-run-nginx: ## runs the kwil container with the math extension and nginx
-	@docker compose up -d kwil extension-1 nginx
-
 delete: ## deletes the kwil and math containers
 	@docker compose down
 
 stop: ## stops the kwil and math containers
 	@docker compose stop
 
-generate-ssl:
-	@chmod +x ./scripts/cert.sh
-	@./scripts/cert.sh renew_certs
-
-
 download-and-run: download-images run ## downloads the kwil image and runs the containers
-
-download-and-run-ssl: download-images generate-ssl run-nginx ## downloads the kwil image and runs the containers with ssl
