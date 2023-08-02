@@ -10,13 +10,9 @@ This repo serves as a template for running your own extensions using Docker Comp
 make download-and-run
 ```
 
-If you want to self-generate an SSL certificate to access the database over HTTPS, instead run:
+Once the command has finished executing, your database will be accessible on http://localhost:8080.
 
-```bash
-make download-and-run-ssl
-```
-
-You will then need to access the database on https://localhost:443
+Note that some browsers may require security adjustments to connect to the local database from the Kuneiform IDE.
 
 You can stop the database using:
 
