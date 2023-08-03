@@ -1,7 +1,7 @@
 version: '3'
 services:
   extension-1:
-    image: tsextensions/hellomath
+    image: <your-extension-here>
     ports:
       - 50055:50051
     restart: on-failure
