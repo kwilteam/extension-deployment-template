@@ -1,13 +1,13 @@
 version: '3'
 services:
   extension-1:
-    image: <image>
+    image: kwildb/extension-math:multi-arch
     ports:
       - 50055:50051
     restart: on-failure
 
   kwil:
-    image: kwildb/kwil:v0.6.1
+    image: kwildb/kwil:latest
     ports:
       - 50051:50051
       - 8080:8080
