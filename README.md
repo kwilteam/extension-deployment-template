@@ -3,7 +3,7 @@
 This repo serves as a template for running your own extensions using Docker Compose. To run Kwil with your own extension:
 
 1. [Create your extension](<https://docs.kwil.com/docs/extensions/introduction>) and build it as a [Docker image](<https://docs.docker.com/get-started/02_our_app/>)
-2. In the [docker-compose.yaml](./docker-compose.yaml) file, replace `<your_image_here>` with the name of your built docker image.
+2. In the [docker-compose.yaml](./docker-compose.yaml) file, replace `<image>` with the name of your built docker image.  It assumes the gRPC server is running on port 50051
 3. Run Kwil and your image by running:
 
 ```bash
