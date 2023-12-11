@@ -7,7 +7,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 download-images: ## downloads the kwil image
-	@docker pull kwildb/kwil:latest
+	@docker pull kwildb/kwil:v0.6.1
 
 run: ## runs the kwil container with the math extension
 	@docker compose up -d kwil extension-1
