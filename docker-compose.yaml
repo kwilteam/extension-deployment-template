@@ -1,7 +1,7 @@
 version: '3'
 services:
   extension-1:
-    image: <image>
+    image: kwildb/extension-math:multi-arch
     ports:
       - 50055:50051
     restart: on-failure
@@ -9,13 +9,11 @@ services:
   kwil:
     image: kwildb/kwil:v0.6.1
     ports:
-      - 50051:50051
       - 8080:8080
-    environment:
-      - KWILD_EXTENSION_ENDPOINTS=extension-1:50051
     depends_on:
       - extension-1
     restart: on-failure
     command: |
       --autogen
       --app.extension-endpoints=extension-1:50051
+      --app.http-listen-addr=0.0.0.0:8080
